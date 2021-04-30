@@ -1,0 +1,129 @@
+@font-face {
+    font-family: giz;
+    src: url(../fontes/kgsecondchancessketch-webfont.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: giz;
+}
+
+body {
+    background-image: url(../img/Fundo_Animado.jpg);
+}
+
+.container {
+    width: 45%;
+    min-width: 650px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../img/lousaa.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+header {
+    color: rgb(243 133 43);
+    text-align: center;
+    font-size: 80px;
+    padding: 0;
+}
+
+.conta {
+    text-align: center;
+    font-size: 90px;
+    margin-top: 10%;
+    width: 70%;
+    padding: 5px 10px;
+    margin: 40px auto;
+    color: white;
+    border: solid 3px;
+    border-radius: 33% 0 33% 0;
+}
+
+.alternativas {
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+    width: 100%;
+    margin: 8% auto 2% auto;
+    justify-items: center;
+    align-items: center;
+}
+
+option {
+    height: auto;
+    text-align: center;
+    font-size: 65px;
+    margin-top: 18px;
+    color: white;
+    font-family: giz;
+    color: aqua;
+}
+
+.op1 {
+    width: 70%;
+    height: 150px;
+    text-align: center;
+    line-height: 100px;
+    background-image: url(../img/nuvem_azul.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.op2 {
+    width: 70%;
+    height: 150px;
+    text-align: center;
+    line-height: 100px;
+    background-image: url(../img/nuvemamarela.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.op3 {
+    width: 70%;
+    height: 150px;
+    text-align: center;
+    line-height: 100px;
+    background-image: url(../img/nuvem_rosa.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.op4 {
+    width: 70%;
+    height: 150px;
+    text-align: center;
+    line-height: 100px;
+    background-image: url(../img/nuvem_verde.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.op1 option {
+    color: #05caca;
+}
+
+.op2 option {
+    color: #e3fc74;
+}
+
+.op3 option {
+    color: #ff67ca;
+}
+
+.op4 option {
+    color: #4bfa5a
+}
+
+progress {
+    position: relative;
+    top: 3%;
+    width: 95%;
+    height: 30px;
+    margin: 0 2.5%;
+}

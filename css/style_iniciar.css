@@ -1,0 +1,88 @@
+@font-face {
+    font-family: giz;
+    src: url(../fontes/kgsecondchancessketch-webfont.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: giz;
+}
+
+body {
+    background-image: url(../img/Fundo_Animado.jpg);
+}
+
+.main {
+    position: relative;
+    width: 45%;
+    min-width: 720px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../img/lousaa.png);
+    background-repeat: no-repeat;
+    background-size: 100% 86.9%;
+}
+
+.professor img {
+    width: 320px;
+    height: 400px;
+}
+
+.professor {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 55%;
+    width: 40%;
+    z-index: 10;
+}
+
+.balao img {
+    width: 600px;
+    height: 400px;
+}
+
+.balao {
+    position: relative;
+    top: 5%;
+    left: 14%;
+}
+
+h3 {
+    font-size: 38px;
+    text-align: center;
+}
+
+.fala {
+    position: absolute;
+    width: 500px;
+    height: 150px;
+    top: 18%;
+    left: 21%;
+}
+
+.chao {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    background-image: url(../img/chao.png);
+    background-size: 100% 100%;
+}
+
+a {
+    text-decoration: none;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    font-size: 90px;
+    color: white;
+    border: solid 3px white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+}

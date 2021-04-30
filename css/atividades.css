@@ -1,0 +1,121 @@
+@font-face {
+    font-family: giz;
+    src: url(../fontes/kgsecondchancessketch-webfont.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: giz;
+}
+
+body {
+    background-image: url(../img/Fundo_Animado.jpg);
+}
+
+.main {
+    width: 45%;
+    min-width: 650px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../img/lousaa.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100.2%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 80%;
+    height: 120px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 60px;
+    font-size: 85px;
+    padding-top: 40px;
+    color: #eeee1b;
+}
+
+.atividades {
+    position: relative;
+    height: 79%;
+    width: 100%;
+}
+
+.portugues,
+.matematica,
+.geral,
+.jogos {
+    width: 55%;
+    height: 25%;
+    line-height: 50%;
+    position: relative;
+    text-align: center;
+    line-height: 90px;
+    font-size: 50px;
+}
+
+.matematica {
+    left: 45%;
+    margin-top: 5%;
+    background-image: url(../img/nuvem_rosa.png);
+    background-repeat: no-repeat;
+    background-size: 350px 170px;
+    background-position-y: -8px;
+    background-position: center;
+}
+
+.portugues {
+    left: 5%;
+    background-image: url(../img/nuvem_verde.png);
+    background-repeat: no-repeat;
+    background-size: 350px 170px;
+    background-position-y: -8px;
+    background-position: center;
+}
+
+.geral {
+    left: 45%;
+    background-image: url(../img/nuvemamarela.png);
+    background-repeat: no-repeat;
+    background-size: 350px 170px;
+    background-position-y: -8px;
+    background-position: center;
+}
+
+.jogos {
+    left: 5%;
+    background-image: url(../img/nuvem_azul.png);
+    background-repeat: no-repeat;
+    background-size: 350px 170px;
+    background-position-y: -8px;
+    background-position: center;
+}
+
+.matematica a {
+    color: #ff67ca;
+    font-size: 40px;
+    line-height: 130px;
+}
+
+.portugues a {
+    color: #4bfa5a;
+    font-size: 40px;
+    line-height: 130px;
+}
+
+.geral a {
+    color: #e3fc74;
+    font-size: 40px;
+    line-height: 130px;
+    text-align: justify;
+}
+
+.jogos a {
+    color: #05caca;
+    font-size: 40px;
+    line-height: 130px;
+}

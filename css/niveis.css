@@ -1,0 +1,98 @@
+@font-face {
+    font-family: giz;
+    src: url(../fontes/kgsecondchancessketch-webfont.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: giz;
+}
+
+body {
+    background-image: url(../img/Fundo_Animado.jpg);
+}
+
+header {
+    width: 80%;
+    height: 120px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 60px;
+    font-size: 85px;
+    padding-top: 50px;
+    color: #21fff5;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 65px;
+    width: 300px;
+    height: 120px;
+    line-height: 90px;
+}
+
+.main {
+    width: 45%;
+    min-width: 650px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../img/lousaa.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.niveis {
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 70px;
+    grid-template-rows: 4fr 4fr 4fr;
+    grid-row-gap: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+.facil {
+    color: rgb(6, 113, 235);
+    background-image: url(../img/nuvem_verde.png);
+    background-repeat: no-repeat;
+    background-size: 380px 160px;
+    background-position: center;
+    color: #4bfa5a;
+    height: 170px;
+    width: 420px;
+    line-height: 160px;
+    text-align: center;
+    font-size: 65px;
+}
+
+.medio {
+    color: rgb(213, 236, 2);
+    background-image: url(../img/nuvem_rosa.png);
+    background-repeat: no-repeat;
+    background-size: 380px 160px;
+    background-position: center;
+    color: #ff67ca;
+    height: 170px;
+    width: 420px;
+    line-height: 160px;
+    text-align: center;
+    font-size: 65px;
+}
+
+.dificil {
+    color: rgb(1, 156, 27);
+    background-image: url(../img/nuvemamarela.png);
+    background-repeat: no-repeat;
+    background-size: 380px 160px;
+    background-position: center;
+    color: #e3fc74;
+    height: 170px;
+    width: 420px;
+    line-height: 160px;
+    text-align: center;
+    font-size: 65px;
+}
