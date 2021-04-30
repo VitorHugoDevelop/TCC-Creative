@@ -17,22 +17,60 @@
                 <p>10 + 10 </p>
             </div>
             <div class="alternativas ">
-                <div class="op1 ">
-                    <option>10</option>
+                <div class="op1">
+                    <option id="op1" onclick="clicar(Number(this.innerHTML))">10</option>
                 </div>
                 <div class="op2 ">
-                    <option>20</option>
+                    <option id="op2" onclick="clicar(Number(this.innerHTML))">20</option>
                 </div>
                 <div class="op3 ">
-                    <option>30</option>
+                    <option id="op3" onclick="clicar(Number(this.innerHTML))">30</option>
                 </div>
                 <div class="op4 ">
-                    <option>4</option>
+                    <option id="op4" onclick="clicar(Number(this.innerHTML))">4</option>
                 </div>
             </div>
             <progress id="progress">1456456</progress>
         </div>
     </div>
+    <script>
+        function shuffle(arra1) {
+            var ctr = arra1.length,
+                temp, index;
+            while (ctr > 0) {
+                index = Math.floor(Math.random() * ctr);
+                ctr--;
+                temp = arra1[ctr];
+                arra1[ctr] = arra1[index];
+                arra1[index] = temp;
+            }
+            return arra1
+        }
+
+        function inicia() {
+            let n1 = Math.floor(Math.random() * 20)
+            let n2 = Math.floor(Math.random() * 20)
+            document.getElementById("desafio").innerHTML = n1 + " + " + n2
+            arra2 = shuffle([0, 1, 2, 3])
+            for (i in shuffle([0, 1, 2, 3])) {
+                console.log(i)
+                id = "op" + (Number(i) + 1)
+                console.log(id)
+                document.getElementById(id).innerHTML = n1 + n2 - Number(arra2[i])
+            }
+
+        }
+
+        function clicar(numero) {
+            resultado = eval(document.getElementById("desafio").innerHTML)
+            if (numero == resultado) {
+                inicia()
+            } else {
+                alert("Voce errou")
+            }
+        }
+    </script>
+    onclick="clicar(Number(this.innerHTML))"
 </body>
 
 </html>
