@@ -62,6 +62,7 @@ option {
     color: white;
     font-family: giz;
     color: aqua;
+    cursor: pointer;
 }
 
 .op1 {
