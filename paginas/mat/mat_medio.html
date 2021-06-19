@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,27 +11,27 @@
     <div class="fundo">
         <div class="container ">
             <header>Matematica</header>
-
-            <div class="conta ">
-                <p>50 / 2 </p>
+            <progress max="100" id="progress"></progress>
+            <div class="conta">
+                <p id="desafio">10 + 10 </p>
             </div>
             <div class="alternativas ">
-                <div class="op1 ">
-                    <option>10</option>
+                <div class="op1">
+                    <option id="op1" onclick="jogo.clicar(Number(this.innerHTML))">10</option>
                 </div>
                 <div class="op2 ">
-                    <option>20</option>
+                    <option id="op2" onclick="jogo.clicar(Number(this.innerHTML))">20</option>
                 </div>
                 <div class="op3 ">
-                    <option>30</option>
+                    <option id="op3" onclick="jogo.clicar(Number(this.innerHTML))">30</option>
                 </div>
                 <div class="op4 ">
-                    <option>4</option>
+                    <option id="op4" onclick="jogo.clicar(Number(this.innerHTML))">4</option>
                 </div>
             </div>
-            <progress max="100" id="progress">1456456</progress>
         </div>
     </div>
 </body>
 <script src="../../js/mat.js"></script>
+<script src="../../js/common.js"></script>
 </html>
