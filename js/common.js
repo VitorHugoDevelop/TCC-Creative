@@ -1,8 +1,14 @@
+// Script comum a todas as páginas
+
+
+// Importa o JQuery
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
+
+// Função para criação de cookies
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -12,6 +18,9 @@ function setCookie(name,value,days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
+
+
+// Função para leitura de cookies
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
