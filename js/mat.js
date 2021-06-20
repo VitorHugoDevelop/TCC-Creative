@@ -26,14 +26,15 @@ class mat {
         this.divs = [[1,1],[2,2],[2,1],[3,3],[3,1],[4,4],[4,2],[4,1],[5,5],[5,1],[6,6],[6,3],[6,2],[6,1],[7,7],[7,1],
                     [8,8],[8,4],[8,2],[8,1],[9,9],[9,3],[9,1],[10,10],[10,5],[10,2],[10,1]]
         let lista = []
-        for (i=1;i<=10;i++) lista[i] = []
-        for (var i=1; i<=10; i=i+1) {
-            for (var j=1; j<=10; j=j+1) {
-                var multiplicacao = i*j;
+        for (let i=1;i<=10;i++) lista[i] = []
+        for (let i=1; i<=10; i=i+1) {
+            for (let j=1; j<=10; j=j+1) {
+                let multiplicacao = i*j;
                 lista[i][j] = multiplicacao
             }
         }
         this.tabuada = lista
+        this.usados = [0]
 
         this.inicia()// Inicia a execução do jogo
     }   
@@ -42,15 +43,24 @@ class mat {
     // Método que inicia o jogo
     inicia() {
         this.geraop() // Gera o desafio
+        let i
+        // Verifica se o desafio usado não é repetido
+        for (i in this.usados) {
+            if (this.desafio == this.usados[i]) {
+                this.inicia()
+                return
+            } 
+        }
+        this.usados.push(this.desafio)
         document.getElementById("desafio").innerHTML = this.desafio // Apresenta o desafio na interface
-        
+            
         // Dispõe as quatro opções
         let array = this.shuffle([0, 1, 2, 3])
         for (let i in this.shuffle([0, 1, 2, 3])) {
             let id = "op" + (Number(i) + 1)
             var op = this.resultado - Number(array[i])
             document.getElementById(id).innerHTML = op
-        }        
+        }
     }
 
 
