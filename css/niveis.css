@@ -48,7 +48,7 @@ a {
     display: grid;
     width: 80%;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 5%;
     grid-template-rows: 4fr 4fr 4fr;
     grid-row-gap: 10px;
     align-content: center;
