@@ -60,12 +60,11 @@ header {
 
 .matematica {
     left: 45%;
-    margin-top: 5%;
+    margin-top: 1%;
     background-image: url(../img/nuvem_rosa.png);
     background-repeat: no-repeat;
     background-size: 350px 170px;
     background-position-y: -8px;
-    background-position: center;
 }
 
 .portugues {
@@ -74,7 +73,6 @@ header {
     background-repeat: no-repeat;
     background-size: 350px 170px;
     background-position-y: -8px;
-    background-position: center;
 }
 
 .geral {
@@ -83,7 +81,6 @@ header {
     background-repeat: no-repeat;
     background-size: 350px 170px;
     background-position-y: -8px;
-    background-position: center;
 }
 
 .jogos {
@@ -92,7 +89,6 @@ header {
     background-repeat: no-repeat;
     background-size: 350px 170px;
     background-position-y: -8px;
-    background-position: center;
 }
 
 .matematica a {
