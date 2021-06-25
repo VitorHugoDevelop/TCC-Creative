@@ -23,8 +23,7 @@ class mat {
 
         // Definição de valores que serão utilizados
         this.nvl = false
-        this.divs = [[1,1],[2,2],[2,1],[3,3],[3,1],[4,4],[4,2],[4,1],[5,5],[5,1],[6,6],[6,3],[6,2],[6,1],[7,7],[7,1],
-                    [8,8],[8,4],[8,2],[8,1],[9,9],[9,3],[9,1],[10,10],[10,5],[10,2],[10,1]]
+        this.divs = [[4,2],[6,3],[6,2],[8,4],[8,2],[9,3],[10,5],[10,2],[12,6],[12,4],[12,3],[12,2],[14,7],[14,2]]
         let lista = []
         for (let i=1;i<=10;i++) lista[i] = []
         for (let i=1; i<=10; i=i+1) {
@@ -46,13 +45,23 @@ class mat {
         let i
         // Verifica se o desafio usado não é repetido
         for (i in this.usados) {
-            if (this.desafio == this.usados[i]) {
+            if (this.desafio.toString() == this.usados[i]) {
                 this.inicia()
                 return
             } 
         }
-        this.usados.push(this.desafio)
-        document.getElementById("desafio").innerHTML = this.desafio // Apresenta o desafio na interface
+        this.usados.push(this.desafio.toString())
+
+        // Apresenta o desafio na interface
+        if (this.nvl && this.diff == 3) {
+            document.getElementById("1").innerHTML = this.desafio[0]
+            document.getElementById("2").innerHTML =this.desafio[1]
+            document.getElementById("3").innerHTML = this.desafio[2]
+        } else {
+            document.getElementById("n1").src = "../../img/nums/Maca_Cartoon_PNG_"+this.desafio[0]+".png"
+            document.getElementById("sinal").innerHTML   = this.desafio[1]
+            document.getElementById("n2").src = "../../img/nums/Maca_Cartoon_PNG_"+this.desafio[2]+".png"
+        }
             
         // Dispõe as quatro opções
         let array = this.shuffle([0, 1, 2, 3])
@@ -121,11 +130,18 @@ class mat {
                         setCookie("MatProgMed", true)
                     }
                     break
+                case 3:
+                    if (!getCookie("MatProgMed")) {
+                        setCookie("MatProgMed", true)
+                    }
+                    if (!getCookie("MatProgFac")) {
+                        setCookie("MatProgFac", true)
+                    }
             }
 
             alert("Parabéns, você completou o nível")
             //todo
-            window.location.replace("niveis.html");
+            window.location.replace("niveis_mat.html");
         }        
     }
 
@@ -146,106 +162,38 @@ class mat {
                 // Operações de soma e subtração, define as varíaveis resultado e desafio
                 if (!this.nvl) {
                     this.resultado = this.n1 + this.n2
-                    this.desafio = this.n1 + "+" + this.n2
+                    this.desafio = [this.n1, "+", this.n2]
                 } else {
                     if (this.n1 < this.n2) [this.n1, this.n2] = [this.n2, this.n1]
                     this.resultado = this.n1 - this.n2
-                    this.desafio = this.n1 + "-" + this.n2
+                    this.desafio = [this.n1, "-", this.n2]
                 } 
             break
 
             // Médio
             case 2:
-
-                // Operações de soma e subtração, define as varíaveis resultado e desafio
-                if (!this.nvl) {
+                // Operações de multiplicação, define as varíaveis resultado e desafio
                     this.resultado = this.n1 * this.n2
-                    this.desafio = this.n1 + "*" + this.n2
-                } else {
-
-                    // Para manter os resultados e divisões em números inteiros e não decimais
-                    // a operação de divisão é retirada de uma lista de divisões que resultam em inteiros
-                    let valores = this.divs[Math.floor(Math.random() * this.divs.length)]
-                    this.resultado = valores[0] / valores[1]
-                    this.desafio = valores[0] + "÷" + valores[1]
-                } 
+                    this.desafio = [this.n1, "*", this.n2]
             break
             
             // Difícil
             case 3:
 
-                // Aqui as coisas ficam mais complicadas
-                // um terceiro número é gerado para que o desafio possa ter 3 operações
-                this.n3 = Math.floor((Math.random() * 9)+1)
-
-                // Os primeiros 5 desafios são de soma e subtração
-                if (!this.nvl) {
-                    let diff3 // Varíavel auxiliar
-                    let ops = [] // Lista onde as operações são guardadas
-
-                    // Há uma chance de 50% de ser soma ou subtração
-                    if (Math.floor(Math.random() * 2) == 0) {
-                        diff3 = this.n1 + this.n2
-                        ops.push("+")
+                // Os primeiros 5 desafios são divisões com números de 2 até 8               
+                let valores = this.divs[Math.floor(Math.random() * this.divs.length)]
+                if(!this.nvl){
+                    while(valores[0] > 9 || valores[1] > 9) {
+                        valores = this.divs[Math.floor(Math.random() * this.divs.length)]
                     }
-                    else {
-                        diff3 = this.n1 - this.n2
-                        ops.push("-")
-                    }
-                    if (Math.floor(Math.random() * 2) == 0) {
-                        diff3 = diff3 + this.n3
-                        ops.push("+")
-                    }
-                    else {
-                        diff3 = diff3 - this.n3
-                        ops.push("-")
-                    }
+                }
+                // Os ultimos 5 envolvem números de 2 até 14
+                this.n1 = valores[0]
+                this.n2 = valores[1]
 
-                    // Define o resultado
-                    this.resultado = diff3
-                    // Monta o desafio com base nas operações salvas em uma lista
-                    this.desafio = this.n1 + ops[0] + this.n2 + ops[1] + this.n3
-
-                
-                // Agora os desafios são de divisão e multiplicação
-                } else {
-                    let diff3 // Varíavel auxiliar
-                    let ops = [] // Lista onde as operações são guardadas
-
-                    // Há uma chance de 50% de ser multiplicação ou divisão
-                    if (Math.floor(Math.random() * 2) == 0) {
-                        diff3 = this.n1 * this.n2
-                        ops.push("*")
-                    }
-                    else {
-
-                        // Para manter os resultados e divisões em números inteiros e não decimais
-                        // a operação de divisão é retirada de uma lista de divisões que resultam em inteiros
-                        let valores = this.divs[Math.floor(Math.random() * this.divs.length)]
-                        diff3 = valores[0] / valores[1]
-                        this.n1 = valores[0]
-                        this.n2 = valores[1]
-                        ops.push("÷")
-                    }
-
-                    // Testa o resultado da primeira parte da operação para checar quais
-                    // números de 1 a 10 conseguem dividi-lo em um número inteiro
-                    let possiveis = this.testadiv(diff3) 
-
-                    if (Math.floor(Math.random() * 2) == 0) {
-                        diff3 = diff3 * this.n3
-                        ops.push("*")
-                    }
-                    else {
-                        let valor = possiveis[Math.floor(Math.random() * possiveis.length)]
-                        diff3 = diff3 / valor
-                        this.n3 = valor
-                        ops.push("÷")
-                    }
-
-                    this.resultado = diff3
-                    this.desafio = this.n1 + ops[0] + this.n2 + ops[1] + this.n3
-                } 
+                // Define o resultado
+                this.resultado = valores[0] / valores[1]
+                this.desafio = [this.n1, "÷", this.n2]
                 break
         }
     }
@@ -266,9 +214,18 @@ class mat {
 
 }
 
+function preloadImage(url)
+{
+    let img=new Image();
+    img.src=url;
+}
+
 // Após o documento ser carregado inicia o jogo
 $(document).ready(
     () => {
+        for(let i = 1;i < 10;i++) {
+            preloadImage("../../img/nums/Maca_Cartoon_PNG_"+i+".png");
+        }
         jogo = new mat()
     }
 )
