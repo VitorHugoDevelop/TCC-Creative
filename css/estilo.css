@@ -128,3 +128,31 @@ progress {
     height: 30px;
     margin: 0 2.5%;
 }
+
+
+
+
+
+/*
+                BAGUNÇA QUE EU FIZ PARA ENCAIXAR AS IMAGENS
+*/
+                #desafio {
+                    max-height: 115px;
+                    max-width: 430px;
+
+                }
+                img {
+                    width: 142px;
+                    height: 90px;
+                    align-content: center;
+                }
+                .coluna {
+                    float: left;
+                    width: 33.3%;
+                }
+                
+                .linha::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                }

@@ -45,13 +45,23 @@ class mat {
         let i
         // Verifica se o desafio usado não é repetido
         for (i in this.usados) {
-            if (this.desafio == this.usados[i]) {
+            if (this.desafio.toString() == this.usados[i]) {
                 this.inicia()
                 return
             } 
         }
-        this.usados.push(this.desafio)
-        document.getElementById("desafio").innerHTML = this.desafio // Apresenta o desafio na interface
+        this.usados.push(this.desafio.toString())
+
+        // Apresenta o desafio na interface
+        if (this.nvl && this.diff == 3) {
+            document.getElementById("1").innerHTML = this.desafio[0]
+            document.getElementById("2").innerHTML =this.desafio[1]
+            document.getElementById("3").innerHTML = this.desafio[2]
+        } else {
+            document.getElementById("n1").src = "../../img/nums/Maca_Cartoon_PNG_"+this.desafio[0]+".png"
+            document.getElementById("sinal").innerHTML   = this.desafio[1]
+            document.getElementById("n2").src = "../../img/nums/Maca_Cartoon_PNG_"+this.desafio[2]+".png"
+        }
             
         // Dispõe as quatro opções
         let array = this.shuffle([0, 1, 2, 3])
@@ -120,11 +130,18 @@ class mat {
                         setCookie("MatProgMed", true)
                     }
                     break
+                case 3:
+                    if (!getCookie("MatProgMed")) {
+                        setCookie("MatProgMed", true)
+                    }
+                    if (!getCookie("MatProgFac")) {
+                        setCookie("MatProgFac", true)
+                    }
             }
 
             alert("Parabéns, você completou o nível")
             //todo
-            window.location.replace("niveis.html");
+            window.location.replace("niveis_mat.html");
         }        
     }
 
@@ -145,11 +162,11 @@ class mat {
                 // Operações de soma e subtração, define as varíaveis resultado e desafio
                 if (!this.nvl) {
                     this.resultado = this.n1 + this.n2
-                    this.desafio = this.n1 + "+" + this.n2
+                    this.desafio = [this.n1, "+", this.n2]
                 } else {
                     if (this.n1 < this.n2) [this.n1, this.n2] = [this.n2, this.n1]
                     this.resultado = this.n1 - this.n2
-                    this.desafio = this.n1 + "-" + this.n2
+                    this.desafio = [this.n1, "-", this.n2]
                 } 
             break
 
@@ -157,7 +174,7 @@ class mat {
             case 2:
                 // Operações de multiplicação, define as varíaveis resultado e desafio
                     this.resultado = this.n1 * this.n2
-                    this.desafio = this.n1 + "*" + this.n2
+                    this.desafio = [this.n1, "*", this.n2]
             break
             
             // Difícil
@@ -166,7 +183,7 @@ class mat {
                 // Os primeiros 5 desafios são divisões com números de 2 até 8               
                 let valores = this.divs[Math.floor(Math.random() * this.divs.length)]
                 if(!this.nvl){
-                    while(valores[0] > 8 || valores[1] > 8) {
+                    while(valores[0] > 9 || valores[1] > 9) {
                         valores = this.divs[Math.floor(Math.random() * this.divs.length)]
                     }
                 }
@@ -176,7 +193,7 @@ class mat {
 
                 // Define o resultado
                 this.resultado = valores[0] / valores[1]
-                this.desafio = this.n1 + "÷" + this.n2
+                this.desafio = [this.n1, "÷", this.n2]
                 break
         }
     }
@@ -197,9 +214,18 @@ class mat {
 
 }
 
+function preloadImage(url)
+{
+    let img=new Image();
+    img.src=url;
+}
+
 // Após o documento ser carregado inicia o jogo
 $(document).ready(
     () => {
+        for(let i = 1;i < 10;i++) {
+            preloadImage("../../img/nums/Maca_Cartoon_PNG_"+i+".png");
+        }
         jogo = new mat()
     }
 )
