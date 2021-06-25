@@ -31,3 +31,9 @@ function getCookie(name) {
     }
     return null;
 }
+
+function addcss(rule) {
+    let div = $("<div />", {
+      html: '&shy;<style>' + rule + '</style>'
+    }).appendTo("body");    
+  }
