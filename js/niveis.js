@@ -6,11 +6,30 @@ class nivel{
 
     // Verifica se o nível fácil e médio já foram completados
     constructor() {
-        if (!(getCookie("MatProgFac") == "true")) {
-            this.trava(1)
+
+        if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "niveis_port.html") {
+            this.materia = 1
+        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "niveis_mat.html") {
+            this.materia = 2
         }
-        if (!(getCookie("MatProgMed") == "true")) {
-            this.trava(2)
+
+        switch(this.materia) {
+            case 1:
+                if (!(getCookie("PortProgFac") == "true")) {
+                    this.trava(1)
+                }
+                if (!(getCookie("PortProgMed") == "true")) {
+                    this.trava(2)
+                }
+                break
+            case 2:
+                if (!(getCookie("MatProgFac") == "true")) {
+                    this.trava(1)
+                }
+                if (!(getCookie("MatProgMed") == "true")) {
+                    this.trava(2)
+                }
+                break
         }
     }
 
