@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_COOKIE['login']))
+{
+    header("location: ../login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +22,13 @@
         <header>Atividades</header>
         <div class="atividades">
             <div class="matematica">
-                <a href="mat/niveis_mat.html">Matemática</a>
+                <a href="mat/niveis_mat.php">Matemática</a>
             </div>
             <div class="portugues">
-                <a href="port/niveis_port.html">Português</a>
+                <a href="port/niveis_port.php">Português</a>
             </div>
             <div class="geral">
-                <a href="#">Gerais</a>
+                <a href="geral/niveis_geral.php">Gerais</a>
             </div>
             <div class="jogos">
                 <a href="#">Jogos</a>

@@ -6,14 +6,11 @@ class nivel{
 
     // Verifica se o nível fácil e médio já foram completados
     constructor() {
-
-        if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "niveis_port.html") {
+        if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "niveis_port.php") {
             this.materia = 1
-        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "niveis_mat.html") {
+        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "niveis_mat.php") {
             this.materia = 2
-        }
-
-        switch(this.materia) {
+        } switch(this.materia) {
             case 1:
                 if (!(getCookie("PortProgFac") == "true")) {
                     this.trava(1)
@@ -41,12 +38,12 @@ class nivel{
             case 1:
                 document.getElementsByClassName("medio")[0].href = "#"
                 document.getElementsByClassName("medio")[0].style.filter = "brightness(0%)"
-                //todo
+                //TODO
                 break
             case 2:
                 document.getElementsByClassName("dificil")[0].href = "#"
                 document.getElementsByClassName("dificil")[0].style.filter = "brightness(0%)"
-                //todo
+                //TODO
                 break
         }
 

@@ -7,23 +7,20 @@ class mat {
 
     // Método que inicializa a classe
     constructor() {
-
-
         // Verifica a dificuldade atual através do endereço da página
-        if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_facil.html") {
+        if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_facil.php") {
             this.diff = 1
-        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_medio.html") {
+        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_medio.php") {
             this.diff = 2
-        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_dificil.html") {
+        } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_dificil.php") {
             this.diff = 3
         }
-
         document.getElementById("progress").value = 0 // Inicia a barra de progresso
 
 
         // Definição de valores que serão utilizados
         this.nvl = false
-        this.divs = [[4,2],[6,3],[6,2],[8,4],[8,2],[9,3],[10,5],[10,2],[12,6],[12,4],[12,3],[12,2],[14,7],[14,2]]
+        this.divs = [[2,1],[3,1],[4,2],[4,1],[5,1],[6,3],[6,2],[6,1],[7,1],[8,4],[8,2],[8,1],[9,3],[9,1],[10,5],[10,2],[10,1]]
         let lista = []
         for (let i=1;i<=10;i++) lista[i] = []
         for (let i=1; i<=10; i=i+1) {
@@ -36,7 +33,7 @@ class mat {
         this.usados = [0]
 
         this.inicia()// Inicia a execução do jogo
-    }   
+    }
 
 
     // Método que inicia o jogo
@@ -45,23 +42,17 @@ class mat {
         let i
         // Verifica se o desafio usado não é repetido
         for (i in this.usados) {
-            if (this.desafio.toString() == this.usados[i]) {
+            if (this.desafio + "" == this.usados[i]) {
                 this.inicia()
                 return
             } 
         }
-        this.usados.push(this.desafio.toString())
+        this.usados.push(this.desafio + "")
 
         // Apresenta o desafio na interface
-        if (this.nvl && this.diff == 3) {
-            document.getElementById("1").innerHTML = this.desafio[0]
-            document.getElementById("2").innerHTML =this.desafio[1]
-            document.getElementById("3").innerHTML = this.desafio[2]
-        } else {
-            document.getElementById("n1").src = "../../img/nums/Maca_Cartoon_PNG_"+this.desafio[0]+".png"
+            document.getElementById("n1").src = "../../img/maca/maca"+this.desafio[0]+".png"
             document.getElementById("sinal").innerHTML   = this.desafio[1]
-            document.getElementById("n2").src = "../../img/nums/Maca_Cartoon_PNG_"+this.desafio[2]+".png"
-        }
+            document.getElementById("n2").src = "../../img/maca/maca"+this.desafio[2]+".png"
             
         // Dispõe as quatro opções
         let array = this.shuffle([0, 1, 2, 3])
@@ -92,13 +83,13 @@ class mat {
     clicar(numero) {
         // Caso o usuário acerte, gera outro desafio e progride
         if (numero == this.resultado) {
-            this.inicia()
             this.progredir()
+            this.inicia()
         } 
         // Caso esteja errado, mostra um alerta
         else {
             alert("Voce errou")
-            //todo
+            //TODO
         }
     }
     
@@ -140,8 +131,8 @@ class mat {
             }
 
             alert("Parabéns, você completou o nível")
-            //todo
-            window.location.replace("niveis_mat.html");
+            //TODO
+            window.location.replace("../../BancoDeDados/progresso.php?vaipara=mat");
         }        
     }
 
@@ -197,21 +188,6 @@ class mat {
                 break
         }
     }
-
-    // Testa um número para descobrir quais números de 1 a 10 conseguem dividi-lo em um inteiro
-    testadiv(num) {
-        let possib = []
-        let i, i2
-        for (i in this.tabuada) {
-            for (i2 in this.tabuada) {
-                if (this.tabuada[i][i2] == num) {
-                    possib.push(i)
-                }
-            }
-        }
-        return possib
-    }
-
 }
 
 function preloadImage(url)
@@ -224,7 +200,7 @@ function preloadImage(url)
 $(document).ready(
     () => {
         for(let i = 1;i < 10;i++) {
-            preloadImage("../../img/nums/Maca_Cartoon_PNG_"+i+".png");
+            preloadImage("../../img/maca/maca"+i+".png");
         }
         jogo = new mat()
     }

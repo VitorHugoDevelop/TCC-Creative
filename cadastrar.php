@@ -1,3 +1,6 @@
+<?php
+    setcookie('login', null, -1, "/");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,12 +17,12 @@
         <h1>Cadastrar</h1>
         <div class="chao"></div>
         <div class="login">
-            <form method="post" action="validao_cad.php" class="formulario">
+            <form method="post" action="BancoDeDados/cadastro.php" class="formulario">
                 <label>Digite Seu Nome</label>
                 <input type="text" name="usuario">
                 <label>Digite sua senha</label>
                 <input type="password" name="senha">
-                <input type="button" Value="Cadastrar" class="botao">
+                <input type="submit" Value="Cadastrar" class="botao">
             </form>
         </div>
         <div class="cadastrar">

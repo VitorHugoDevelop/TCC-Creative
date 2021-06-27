@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_COOKIE['login']))
+{
+    header("location: ../../login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,9 +21,9 @@
     <div class="main">
         <header>Dificuldade</header>
         <div class="niveis">
-            <a href="port_facil.html" class="facil">Fácil</a>
-            <a href="port_medio.html" class="medio">Médio</a>
-            <a href="port_dificil.html" class="dificil">Dificil</a>
+            <a href="port_facil.php" class="facil">Fácil</a>
+            <a href="port_medio.php" class="medio">Médio</a>
+            <a href="port_dificil.php" class="dificil">Dificil</a>
         </div>
     </div>
 </body>

@@ -1,6 +1,14 @@
+<?php
+session_start();
+if(!isset($_COOKIE['login']))
+{
+    header("location:login.php");
+    exit;
+}
+include("BancoDeDados/crrgProg.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +22,7 @@
         <div class="professor">
             <img src="img/professor.png">
         </div>
-        <a href="paginas/atividade.html">Iniciar</a>
+        <a href="paginas/atividade.php">Iniciar</a>
         <div class="balao">
             <img src="img/Balao_de_Fala_PNG_2 - Copia - Copia.png" alt="">
         </div>

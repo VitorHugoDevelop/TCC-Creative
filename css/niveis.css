@@ -55,7 +55,7 @@ a {
     justify-content: center;
 }
 
-.facil {
+.facil, .nat {
     color: rgb(6, 113, 235);
     background-image: url(../img/nuvem_verde.png);
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@ a {
     font-size: 65px;
 }
 
-.medio {
+.medio, .geo {
     color: rgb(213, 236, 2);
     background-image: url(../img/nuvem_rosa.png);
     background-repeat: no-repeat;
