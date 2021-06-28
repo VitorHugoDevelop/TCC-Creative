@@ -36,6 +36,6 @@ if(!isset($_COOKIE['login']))
         </div>
     </div>
 </body>
-<script src="../../js/common.js"></script>
+<script src="../js/common.js"></script>
 
 </html>

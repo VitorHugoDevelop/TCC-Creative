@@ -23,7 +23,7 @@ if(!isset($_COOKIE['login']))
         <div class="niveis">
             <a href="mat_facil.php" class="facil">Fácil</a>
             <a href="mat_medio.php" class="medio">Médio</a>
-            <a href="mat_dificil.php" class="dificil">Dificil</a>
+            <a href="mat_dificil.php" class="dificil">Difícil</a>
         </div>
     </div>
 </body>

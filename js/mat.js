@@ -88,8 +88,18 @@ class mat {
         } 
         // Caso esteja errado, mostra um alerta
         else {
-            alert("Voce errou")
-            //TODO
+            switch(this.diff) {
+                case 1:
+                    if (!this.nvl) popUp("Se eu juntar<br>as maçãs,<br>quantas eu terei?")
+                    else popUp("Se eu subtrair<br>as maçãs,<br>quantas eu terei?")
+                    break
+                case 2:
+                    popUp("Se eu multiplicar as maçãs, quantas eu terei?")
+                    break
+                case 3:
+                    popUp("Se eu dividir as maçãs, quantas eu terei?")
+                    break
+            }
         }
     }
     
@@ -130,9 +140,11 @@ class mat {
                     }
             }
 
-            alert("Parabéns, você completou o nível")
-            //TODO
-            window.location.replace("../../BancoDeDados/progresso.php?vaipara=mat");
+            let x = () => {
+                window.location.replace("../../BancoDeDados/progresso.php?vaipara=mat");
+            }
+            if (this.diff != 3) popUp("<br>Parabéns,<br>você conseguiu!<br>Agora avance para a próxima<br>dificuldade!", x)
+            else popUp("<br>Parabéns,<br>você completou as atividades<br>de matemática!", x)
         }        
     }
 

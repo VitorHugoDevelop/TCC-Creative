@@ -32,8 +32,7 @@ include("BancoDeDados/crrgProg.php")
         <div class="chao">
         </div>
     </div>
-
 </body>
-<script src="../../js/common.js"></script>
+<script src="js/common.js"></script>
 
 </html>

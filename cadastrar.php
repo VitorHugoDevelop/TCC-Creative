@@ -27,7 +27,7 @@
         </div>
         <div class="cadastrar">
             <div class="div-cad">
-                <a href="login.html">Entrar</a>
+                <a href="login.php">Entrar</a>
             </div>
         </div>
     </div>

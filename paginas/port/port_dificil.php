@@ -23,7 +23,7 @@ if(!isset($_COOKIE['login']))
     <div class="fundo">
         <div class="main">
             <header>Portugues</header>
-            <h2>Qual palavra corresponde a figura?</h2>
+            <h2>Qual a primeira sílaba dessa figura?</h2>
             <div class="container ">
                 <div class="row justify-content-center  ">
                     <div class="col-6">

@@ -12,6 +12,7 @@
 
 body {
     background-image: url(../img/Fundo_Animado.jpg);
+    overflow: hidden;
 }
 
 .main {
@@ -31,7 +32,7 @@ body {
 }
 
 .professor {
-    position: absolute;
+    position: fixed;
     top: 40%;
     right: 0;
     height: 55%;

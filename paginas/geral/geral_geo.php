@@ -33,16 +33,16 @@ if(!isset($_COOKIE['login']))
             </div>
             <div class="alternativas ">
                 <div class="op1">
-                    <option onclick="jogo.clicar(this.innerHTML)" id="op1">A</option>
+                    <option onclick="jogo.clicar(this.innerHTML)" id="op1"style="background-image:''"></option>
                 </div>
                 <div class="op2 ">
-                    <option onclick="jogo.clicar(this.innerHTML)" id="op2">C</option>
+                    <option onclick="jogo.clicar(this.innerHTML)" id="op2"></option>
                 </div>
                 <div class="op3 ">
-                    <option onclick="jogo.clicar(this.innerHTML)" id="op3">J</option>
+                    <option onclick="jogo.clicar(this.innerHTML)" id="op3"style="background-image:''"></option>
                 </div>
                 <div class="op4 ">
-                    <option onclick="jogo.clicar(this.innerHTML)" id="op4">E</option>
+                    <option onclick="jogo.clicar(this.innerHTML)" id="op4"></option>
                 </div>
             </div>
             <progress max="100" id="progress"></progress>

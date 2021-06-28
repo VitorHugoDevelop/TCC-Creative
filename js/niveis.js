@@ -38,12 +38,10 @@ class nivel{
             case 1:
                 document.getElementsByClassName("medio")[0].href = "#"
                 document.getElementsByClassName("medio")[0].style.filter = "brightness(0%)"
-                //TODO
                 break
             case 2:
                 document.getElementsByClassName("dificil")[0].href = "#"
                 document.getElementsByClassName("dificil")[0].style.filter = "brightness(0%)"
-                //TODO
                 break
         }
 

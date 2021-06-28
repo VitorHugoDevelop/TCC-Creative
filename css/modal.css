@@ -1,0 +1,32 @@
+#modal-prim::before,
+#modal-prim::after,
+#modal-prim *::before,
+#modal-prim *::after {
+  all: unset;
+}
+.modal-prim {
+    all: unset;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,.5);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;   
+}
+.modal {
+    all: unset;
+    width: 52.5%;
+}
+.centered {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    text-align: center;
+}
+ 

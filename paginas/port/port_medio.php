@@ -8,7 +8,6 @@ if(!isset($_COOKIE['login']))
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +22,7 @@ if(!isset($_COOKIE['login']))
     <div class="fundo">
         <div class="main">
             <header>Portugues</header>
-            <h2>Qual a primeira sílaba dessa figura?</h2>
+            <h2>Qual a primeira letra dessa figura ?</h2>
             <div class="container ">
                 <div class="row justify-content-center  ">
                     <div class="col-6">

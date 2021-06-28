@@ -29,7 +29,7 @@
         <div class="cadastrar">
             <p>JA POSSUI UMA CONTA? CRIE UMA CONTA AGORA MESMO!</p>
             <div class="div-login">
-                <a href="cadastrar.html">Cadastrar</a>
+                <a href="cadastrar.php">Cadastrar</a>
             </div>
         </div>
     </div>
