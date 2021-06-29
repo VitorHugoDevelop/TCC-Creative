@@ -47,6 +47,7 @@ function popUp(mensagem, callback) {
                                 '</div>' +
                                 '</div>'
     document.getElementById("mensagem").innerHTML = mensagem
+    if (callback) document.getElementsByClassName("modal-prim")[0].onclick = ""
     setTimeout(() => {
         document.getElementsByClassName("modal-prim")[0].remove()
         callback();

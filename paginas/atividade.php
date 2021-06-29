@@ -31,7 +31,7 @@ if(!isset($_COOKIE['login']))
                 <a href="geral/niveis_geral.php">Gerais</a>
             </div>
             <div class="jogos">
-                <a href="#">Jogos</a>
+                <a href="jogos/niveis_jogos.php">Jogos</a>
             </div>
         </div>
     </div>

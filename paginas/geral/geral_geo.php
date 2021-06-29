@@ -19,6 +19,12 @@ if(!isset($_COOKIE['login']))
     <title>Geografia</title>
 </head>
 
+<style>
+    img {
+        border-radius: 50%
+    }
+</style>
+
 <body>
     <div class="fundo">
         <div class="main">

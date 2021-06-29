@@ -7,9 +7,9 @@ class geral {
         }
         document.getElementById("progress").value = 0
         this.geo = ["Verão","Inverno","Primavera","Outono","Ensolarado","Chuvoso","Tarde","Dia","Noite","Manhã"]
-        this.aquaticos = ["Peixe-palhaço","Tubarão","Lula","Polvo","Golfinho"]
+        this.aquaticos = ["Peixe-palhaço","Tubarão","Estrela do mar","Polvo","Golfinho"]
         this.terrestres = ["Cachorro","Elefante","Gato","Leão","Macaco"]
-        this.animais = ["Cachorro","Elefante","Gato","Leão","Macaco","Peixe-palhaço","Tubarão","Lula","Polvo","Golfinho"]
+        this.animais = ["Cachorro","Elefante","Gato","Leão","Macaco","Peixe-palhaço","Tubarão","Estrela do mar","Polvo","Golfinho"]
         this.count = 0
         this.palavracount = 0
         this.inicia()
@@ -53,7 +53,7 @@ class geral {
                     popUp("Um dia chuvoso<br>é quando<br>está chovendo!")
                     
                 } else {
-                    popUp("Manhã é hora de acordar, noite é hora<br>de dormir!")
+                    popUp("Manhã é hora de<br>acordar, noite é hora<br>de dormir!")
                 }
             }
         } else if (this.mat == 2) {
