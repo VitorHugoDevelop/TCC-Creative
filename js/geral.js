@@ -63,7 +63,7 @@ class geral {
                     this.count++
                     this.inicia()
                 } else {
-                    popUp("Os animais <br>aquáticos são os que vivem na água!")
+                    popUp("Os animais <br>aquáticos são os<br>que vivem na água!")
                 }
             } else if (palavra =="Terrestre") {
                 if(this.verificaTerr()) {
@@ -102,7 +102,7 @@ class geral {
             let x = () => {
                 window.location.replace("../../BancoDeDados/progresso.php?vaipara=geral");
         }
-            popUp("Parabéns, você completou esta atividade!", x)
+            popUp("Parabéns, você completou<br>esta atividade!", x) //TODO
         }
     }
 
