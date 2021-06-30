@@ -22,7 +22,13 @@ if(!isset($_COOKIE['login']))
 <body>
     <div class="fundo">
         <div class="main">
+        <div class="row">
+            <div class="col" align="center" onclick="window.history.back()">
+            <img class="btnVolta" src="../../img/voltar.png" style="width: 50px; height: 50px;">
+            </div>
+            <div class="col-10">
             <header>Português</header>
+        </div>
             <h2>Qual palavra corresponde a figura?</h2>
             <div class="container ">
                 <div class="row justify-content-center  ">

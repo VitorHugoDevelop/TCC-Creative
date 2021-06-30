@@ -60,9 +60,10 @@ const clicar = (e) => {
                 e.target.src = fundo
                 e.target.onclick = clicar
                 let img = document.querySelector("#memoria #i"+(p0-1))
+                img.src = fundo
                 img.onclick = clicar
                 cliquesTravados = false
-            }, 10);
+            }, 2100);
         }
         cartaVirada = false
         posCartaVirada = -1

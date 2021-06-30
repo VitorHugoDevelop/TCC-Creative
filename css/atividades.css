@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: giz;
+    text-decoration: unset;
 }
 
 body {
@@ -113,4 +114,8 @@ header {
     color: #05caca;
     font-size: 40px;
     line-height: 130px;
+}
+.btnVolta {
+    margin-top:30px;
+    margin-left: 12px;
 }

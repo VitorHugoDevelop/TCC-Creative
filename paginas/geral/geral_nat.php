@@ -21,7 +21,14 @@ if(!isset($_COOKIE['login']))
 <body>
     <div class="fundo">
         <div class="main">
+        <div class="row">
+            <div class="col" align="center" onclick="window.history.back()">
+            <img class="btnVolta" src="../../img/voltar.png" style="width: 50px; height: 50px;">
+            </div>
+            <div class="col-10">
             <header>Natureza</header>
+        </div>
+        </div>
             <h2>A qual grupo esse animal pertence?</h2>
             <div class="container ">
             <div class="row justify-content-center  ">

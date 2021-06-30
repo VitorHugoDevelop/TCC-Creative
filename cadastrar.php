@@ -64,7 +64,7 @@ if ($_GET["jaexiste"]) {
     } else if ($_GET["campo"]) {
         echo "
         <script>
-        popUp('O campo do nome deve ser preenchido!')        
+        popUp('O campo do nome<br>deve ser preenchido!')        
         </script>
         ";
     } else if ($_GET["erro"]) {

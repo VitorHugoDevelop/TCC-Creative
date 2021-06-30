@@ -23,7 +23,7 @@ if(!isset($_COOKIE['login']))
 
 <body>
     <div class="main">
-        <header style="line-height:80px; padding-top:15px">Jogo da Memória</header>
+            <header>Memória</header>
         <div class="container" draggable="false">
             <div class="memoria" id="memoria" draggable="false">
                 <div class="imagens" draggable="false">

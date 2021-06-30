@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: giz;
+    text-decoration: unset;
 }
 
 body {
@@ -95,4 +96,8 @@ a {
     line-height: 160px;
     text-align: center;
     font-size: 60px;
+}
+.btnVolta {
+    margin-top:30px;
+    margin-left: 12px;
 }

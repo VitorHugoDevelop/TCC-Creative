@@ -8,9 +8,9 @@ class port {
             this.diff = 2
         }
         document.getElementById("progress").style.width = "0%"
-        this.palavras = ["Maçã", "Banana", "Carro", "Abacaxi", "Abacate", "Nuvem", "Pêssego", "Foguete", "Cereja", "Melancia",
-                        "Vaca", "Gato", "Celular", "Telefone", "Cavalo", "Xícara", "Caju", "Fogo", "Kiwi", "Bicicleta",
-                        "Avião", "Bicicleta", "Morango", "Cachorro", "Pássaro", "Uva", "Televisão", "Sol", "Lua", "Flor"]
+        this.palavras = ["Maçã", "Banana", "Carro", "Abacaxi", "Abacate", "Nuvem", "Pêssego", "Foguete", "Bicicleta", "Melancia",
+                        "Vaca", "Gato", "Celular", "Telefone", "Cavalo", "Xícara", "Caju", "Fogo", "Kiwi", "Cereja",
+                        "Avião", "Carro", "Morango", "Cachorro", "Pássaro", "Uva", "Televisão", "Sol", "Lua", "Flor"]
         this.facil = this.palavras.slice(0,11)
         this.medio = this.palavras.slice(10,21)
         this.dificil = this.palavras.slice(19,30)

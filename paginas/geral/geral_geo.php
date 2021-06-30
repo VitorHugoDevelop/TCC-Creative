@@ -21,12 +21,18 @@ if(!isset($_COOKIE['login']))
 <body>
     <div class="fundo">
         <div class="main">
+        <div class="row">
+            <div class="col" align="center" onclick="window.history.back()">
+            <img class="btnVolta" src="../../img/voltar.png" style="width: 50px; height: 50px;">
+            </div>
+            <div class="col-10">
             <header>Geografia</header>
+        </div>
             <h2>Qual palavra corresponde a figura?</h2>
             <div class="container">
                 <div class="row text-center  ">
                     <div class="round ">
-                        <img id="palavra" class="img-responsive " src="" width="500px" height="200px">
+                        <img id="palavra" class="img-responsive " src="" style="border-radius: 30%" width="400px" height="200px">
                     </div>
                 </div>
             </div>
