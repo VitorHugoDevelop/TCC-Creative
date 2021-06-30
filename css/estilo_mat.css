@@ -116,10 +116,7 @@ h2 {
     color: #4bfa5a
 }
 
-progress {
-    position: relative;
-    width: 95%;
-    height: 32px;
-    margin-left: 2.5%;
-    bottom: -10px;
+.div_progress {
+    position:relative;
+    bottom: -20px;
 }

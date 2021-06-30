@@ -95,14 +95,15 @@ class geral {
     }
     
     progredir() {
-        if (document.getElementById("progress").value < 90) {
-            document.getElementById("progress").value += 10
+        if (Number(document.getElementById("progress").style.width.replace("%", "")) < 90) {
+            let progVal = Number(document.getElementById("progress").style.width.replace("%", ""))
+            document.getElementById("progress").style.width = progVal + 10 + "%"
         } else {
             document.getElementById("progress").value += 10
             let x = () => {
                 window.location.replace("../../BancoDeDados/progresso.php?vaipara=geral");
         }
-            popUp("Parabéns, você completou<br>esta atividade!", x) //TODO
+            popUp("Parabéns, você<br>completou<br>esta atividade!", x, true)
         }
     }
 

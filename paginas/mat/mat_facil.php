@@ -17,11 +17,10 @@ if(!isset($_COOKIE['login']))
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
     <title>CREATIVE</title>
 </head>
-
 <body>
     <div class="fundo">
         <div class="main ">
-            <header>Matematica</header>
+            <header>Matemática</header>
             <div class="container">
                 <div class="row align-items-center">
                     <div id="1" class="col-5 ">
@@ -49,7 +48,11 @@ if(!isset($_COOKIE['login']))
                     <option id="op4" onclick="jogo.clicar(Number(this.innerHTML))">4</option>
                 </div>
             </div>
-            <progress max="100" id="progress"></progress>
+            <div class="div_progress" style="width: 90%; margin:0 auto;">
+                <div class="progress">
+                    <div id="progress"class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
         </div>
 
     </div>

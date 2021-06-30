@@ -44,7 +44,7 @@ window.onload = function(){
     const trail = [];
     let tail =2; 
   
-    const interval = setInterval(game, 1000/10); //inicia o jogo
+    const interval = setInterval(game, 1000/9); //inicia o jogo
   
     function game(){
       update();  

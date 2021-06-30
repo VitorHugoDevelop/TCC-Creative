@@ -1,0 +1,67 @@
+@font-face {
+    font-family: giz;
+    src: url(../fontes/kgsecondchancessketch-webfont.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: giz;
+}
+
+body {
+    background-image: url(../img/Fundo_Animado.jpg);
+}
+
+.main {
+    width: 45%;
+    min-width: 650px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../img/lousaa.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100.2%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 80%;
+    height: 120px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 60px;
+    font-size: 85px;
+    padding-top: 40px;
+    color: #eeee1b;
+}
+
+.memoria img {
+    user-select: none; 
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 10%;
+    margin-bottom:5px;
+}
+
+.container {
+    width: inherit;
+    height: inherit;
+    margin-top: 80px;
+}
+
+#btInicio {
+    margin-top: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

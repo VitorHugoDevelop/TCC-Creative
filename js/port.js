@@ -7,7 +7,7 @@ class port {
         } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "port_dificil.php") {
             this.diff = 2
         }
-        document.getElementById("progress").value = 0
+        document.getElementById("progress").style.width = "0%"
         this.palavras = ["Maçã", "Banana", "Carro", "Abacaxi", "Abacate", "Nuvem", "Pêssego", "Foguete", "Cereja", "Melancia",
                         "Vaca", "Gato", "Celular", "Telefone", "Cavalo", "Xícara", "Caju", "Fogo", "Kiwi", "Bicicleta",
                         "Avião", "Bicicleta", "Morango", "Cachorro", "Pássaro", "Uva", "Televisão", "Sol", "Lua", "Flor"]
@@ -151,8 +151,9 @@ class port {
     progredir() {
 
         // Checa se o usuário já atingiu o objetivo
-        if (document.getElementById("progress").value < 90) {
-            document.getElementById("progress").value += 10
+        if (Number(document.getElementById("progress").style.width.replace("%", "")) < 90) {
+            let progVal = Number(document.getElementById("progress").style.width.replace("%", ""))
+            document.getElementById("progress").style.width = progVal + 10 + "%"
         }        
         // Caso tenha atingido, salva o progresso através de cookies
         // e retorna ao menu de níveis
@@ -181,8 +182,8 @@ class port {
             let x = () => {
                 window.location.replace("../../BancoDeDados/progresso.php?vaipara=port");
             }
-            if (this.diff != 3) popUp("<br>Parabéns,<br>você conseguiu!<br>Agora avance para a próxima<br>atividade!", x)
-            else popUp("<br>Parabéns,<br>você completou as atividades<br>de português!", x)
+            if (this.diff != 3) popUp("Parabéns,<br>você conseguiu!<br>Agora avance para a próxima<br>dificuldade!", x, true)
+            else popUp("Parabéns,<br>você completou as atividades<br>de português!", x, true)
         }        
     }
 

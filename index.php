@@ -27,7 +27,7 @@ include("BancoDeDados/crrgProg.php")
             <img src="img/Balao_de_Fala_PNG_2 - Copia - Copia.png" alt="">
         </div>
         <div class="fala">
-            <h3>Olá, Seja Bem Vindo ao Creative,<br> Vamos começar?</h3>
+            <h3>Olá, seja bem vindo ao Creative,<br> vamos começar?</h3>
         </div>
         <div class="chao">
         </div>

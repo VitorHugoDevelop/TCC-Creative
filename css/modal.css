@@ -9,13 +9,14 @@
     z-index: 2000;
     display: flex;
     justify-content: center;
-    overflow: hidden;  
+    overflow: hidden;
 }
 .modal {
     all: unset;
     width: 52.5%;
 }
 .centered {
+    padding-top:50px;
     position: absolute;
     top: 25%;
     left: 50%;

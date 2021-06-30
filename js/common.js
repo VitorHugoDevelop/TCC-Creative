@@ -38,11 +38,13 @@ function addcss(rule) {
     }).appendTo("body");    
   }
 
-function popUp(mensagem, callback) {
+function popUp(mensagem, callback, estado) {
+    if (estado) op = "combalao"
+    else op = "triste"
     $('head').append('<link rel="stylesheet" type="text/css" href="http://www.localhost:90/TCC-Creative/css/modal.css">');
     document.body.innerHTML +=  '<div class="modal-prim" onclick="this.remove()" id="modal-prim">'+
                                 '<div class="modal">' +
-                                    '<img src="http://www.localhost:90/TCC-Creative/img/professorcombalao.png" style="all: unset;">' +
+                                    '<img src="http://www.localhost:90/TCC-Creative/img/professor'+op+'.png" style="all: unset;">' +
                                     '<div class="centered" id="mensagem"></div>' +
                                 '</div>' +
                                 '</div>'

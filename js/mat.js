@@ -15,7 +15,7 @@ class mat {
         } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "mat_dificil.php") {
             this.diff = 3
         }
-        document.getElementById("progress").value = 0 // Inicia a barra de progresso
+        document.getElementById("progress").style.width = "0%" // Inicia a barra de progresso
 
 
         // Definição de valores que serão utilizados
@@ -108,11 +108,13 @@ class mat {
     progredir() {
 
         // Checa se o usuário já atingiu o objetivo
-        if (document.getElementById("progress").value < 100) {
-            document.getElementById("progress").value += 10
+        if (Number(document.getElementById("progress").style.width.replace("%", "")) < 100) {
+            let progVal = Number(document.getElementById("progress").style.width.replace("%", ""))
+            document.getElementById("progress").style.width = progVal + 10 + "%"
+            
             
             // Checa se o usuário já atingiu metade do progresso
-            if (document.getElementById("progress").value >= 50) {
+            if (Number(document.getElementById("progress").style.width.replace("%", "")) >= 50) {
                 this.nvl = true
             }
         } 
@@ -143,8 +145,8 @@ class mat {
             let x = () => {
                 window.location.replace("../../BancoDeDados/progresso.php?vaipara=mat");
             }
-            if (this.diff != 3) popUp("<br>Parabéns,<br>você conseguiu!<br>Agora avance para a próxima<br>dificuldade!", x)
-            else popUp("<br>Parabéns,<br>você completou as atividades<br>de matemática!", x)
+            if (this.diff != 3) popUp("Parabéns,<br>você conseguiu!<br>Agora avance para a próxima<br>dificuldade!", x, true)
+            else popUp("Parabéns,<br>você completou<br>as atividades<br>de matemática!", x, true)
         }        
     }
 

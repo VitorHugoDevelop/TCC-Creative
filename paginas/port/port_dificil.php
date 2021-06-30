@@ -16,13 +16,13 @@ if(!isset($_COOKIE['login']))
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/estilo_port.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <title>portugues</title>
+    <title>CREATIVE</title>
 </head>
 
 <body>
     <div class="fundo">
         <div class="main">
-            <header>Portugues</header>
+            <header>Português</header>
             <h2>Qual a primeira sílaba dessa figura?</h2>
             <div class="container ">
                 <div class="row justify-content-center  ">
@@ -45,7 +45,11 @@ if(!isset($_COOKIE['login']))
                     <option onclick="jogo.clicar(this.innerHTML)" id="op4">E</option>
                 </div>
             </div>
-            <progress max="100" id="progress"></progress>
+            <div class="div_progress" style="width: 90%; margin:0 auto;">
+                <div class="progress">
+                    <div id="progress"class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

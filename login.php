@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
-    <title>Login</title>
+    <title>Entrar</title>
 </head>
 
 <body>
@@ -19,15 +19,15 @@
         <h1>Entrar</h1>
         <div class="login">
             <form method="post" action="BancoDeDados/login.php" class="formulario">
-                <label>Digite Seu Nome</label>
-                <input type="text" name="usuario">
+                <label>Digite seu nome</label>
+                <input placeholder="Nome" type="text" name="usuario">
                 <label>Digite sua senha</label>
-                <input type="password" name="senha">
+                <input placeholder="Senha" type="password" name="senha">
                 <input type="submit" Value="Entrar" class="botao">
             </form>
         </div>
         <div class="cadastrar">
-            <p>JA POSSUI UMA CONTA? CRIE UMA CONTA AGORA MESMO!</p>
+            <p>NÃO POSSUI UMA CONTA? CRIE UMA CONTA AGORA MESMO!</p>
             <div class="div-login">
                 <a href="cadastrar.php">Cadastrar</a>
             </div>
