@@ -179,7 +179,7 @@ class mat {
             case 2:
                 // Operações de multiplicação, define as varíaveis resultado e desafio
                     this.resultado = this.n1 * this.n2
-                    this.desafio = [this.n1, "*", this.n2]
+                    this.desafio = [this.n1, "x", this.n2]
             break
             
             // Difícil

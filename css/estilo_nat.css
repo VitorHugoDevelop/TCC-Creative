@@ -11,6 +11,7 @@
 }
 
 body {
+    overflow: hidden;  
     background-image: url(../img/Fundo_Animado.jpg);
 }
 
@@ -33,11 +34,11 @@ header {
 
 .alternativas {
     display: grid;
-    grid-template-rows: 2fr 2fr;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 25px;
+    grid-template-rows: 2fr;
+    grid-template-columns: 1fr;
+    grid-row-gap: 0px;
     width: 100%;
-    margin: 5% auto 0 auto;
+    margin: 0% auto 0 auto;
     justify-items: center;
     align-items: center;
 }
@@ -56,9 +57,9 @@ option {
 h2 {
     position: relative;
     color: white;
-    font-size: 150px;
-    line-height: 100%;
+    font-size: 30px;
     text-align: center;
+    margin-top: 1% 0 0 0;
 }
 
 .op1 {
@@ -117,7 +118,10 @@ h2 {
     color: #4bfa5a
 }
 
-.div_progress {
-    position:relative;
-    bottom: -13px;
+.div-progress {
+    position: relative;
+    width: 95%;
+    height: 32px;
+    margin-left: 2.5%;
+    bottom: 13px;
 }

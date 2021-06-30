@@ -13,14 +13,13 @@
     $logarray = $array['nome'];
     if($login == "" || $login == null){
         echo"<script language='javascript' type='text/javascript'>
-        alert('O campo login deve ser preenchido');
-        window.location.href='../cadastrar.php';
+        window.location.href='../cadastrar.php?campo=true';
         </script>";
     
         }else{
           if($logarray == $login){
             echo"<script language='javascript' type='text/javascript'>
-            alert('Esse login já existe');window.location.href='../cadastrar.php';
+            window.location.href='../cadastrar.php?jaexiste=true';
             </script>";
             die();
     
@@ -30,11 +29,11 @@
     
             if($insert){
               echo"<script language='javascript' type='text/javascript'>
-              alert('Usuário cadastrado com sucesso!');window.location.href='../login.php'
+              window.location.href='../login.php?cadastrou=true'
               </script>";
             }else{
               echo"<script language='javascript' type='text/javascript'>
-              alert('Não foi possível cadastrar esse usuário');window.location.href='../cadastrar.php'
+              window.location.href='../cadastrar.php?erro=true'
               </script>";
             }
           }

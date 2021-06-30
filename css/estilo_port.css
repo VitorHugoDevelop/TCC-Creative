@@ -46,7 +46,7 @@ header {
 option {
     height: auto;
     text-align: center;
-    font-size: 65px;
+    font-size: 250%;
     margin-top: 18px;
     color: white;
     font-family: giz;
@@ -57,7 +57,7 @@ option {
 h2 {
     position: relative;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     margin-top: 1% 0 0 0;
 }

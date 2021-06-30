@@ -11,9 +11,9 @@ class port {
         this.palavras = ["Maçã", "Banana", "Carro", "Abacaxi", "Abacate", "Nuvem", "Pêssego", "Foguete", "Cereja", "Melancia",
                         "Vaca", "Gato", "Celular", "Telefone", "Cavalo", "Xícara", "Caju", "Fogo", "Kiwi", "Bicicleta",
                         "Avião", "Bicicleta", "Morango", "Cachorro", "Pássaro", "Uva", "Televisão", "Sol", "Lua", "Flor"]
-        this.facil = this.palavras.slice(0,10)
-        this.medio = this.palavras.slice(10,20)
-        this.dificil = this.palavras.slice(20,30)
+        this.facil = this.palavras.slice(0,11)
+        this.medio = this.palavras.slice(10,21)
+        this.dificil = this.palavras.slice(19,30)
         this.silabas = ["Va", "Ga", "Ca", "Te", "Mo", "Nu", "Fo", "Na"]
         this.alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
         this.count = 0
@@ -160,17 +160,17 @@ class port {
         else {
             document.getElementById("progress").value += 10
             switch(this.diff) {
-                case 1:
+                case 3:
                     if (!getCookie("PortProgFac")) {
                         setCookie("PortProgFac", true)
                     }
                     break
-                case 2:
+                case 1:
                     if (!getCookie("PortProgMed")) {
                         setCookie("PortProgMed", true)
                     }
                     break
-                case 3:
+                case 2:
                     if (!getCookie("PortProgMed")) {
                         setCookie("PortProgMed", true)
                     }

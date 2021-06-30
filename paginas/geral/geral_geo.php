@@ -23,9 +23,9 @@ if(!isset($_COOKIE['login']))
         <div class="main">
             <header>Geografia</header>
             <h2>Qual palavra corresponde a figura?</h2>
-            <div class="container ">
-                <div class="row justify-content-center  ">
-                    <div class="col-8">
+            <div class="container">
+                <div class="row text-center  ">
+                    <div class="round ">
                         <img id="palavra" class="img-responsive " src="" width="500px" height="200px">
                     </div>
                 </div>

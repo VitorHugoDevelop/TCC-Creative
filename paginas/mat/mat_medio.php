@@ -28,7 +28,7 @@ if(!isset($_COOKIE['login']))
                         <img id="n1" class="img-responsive" src="" alt="3-maças" width="250px" height="150px">
                     </div>
                     <div id="2" class="col-2">
-                        <h2 id="sinal">+</h2>
+                        <h2 id="sinal"></h2>
                     </div>
                     <div id="3" class="col-5 ">
                         <img id="n2" class="img-responsive" src="" alt="3-maças" width="250px" height="150px">

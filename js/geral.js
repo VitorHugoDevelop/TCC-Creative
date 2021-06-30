@@ -6,12 +6,13 @@ class geral {
             this.mat = 2
         }
         document.getElementById("progress").value = 0
-        this.geo = ["Verão","Inverno","Primavera","Outono","Ensolarado","Chuvoso","Tarde","Dia","Noite","Manhã"]
+        this.geo = ["Verão","Inverno","Primavera","Outono","Ensolarado","Chuvoso","Tarde","Dia","Noite","Manhã","Entardecer"]
         this.aquaticos = ["Peixe-palhaço","Tubarão","Estrela do mar","Polvo","Golfinho"]
         this.terrestres = ["Cachorro","Elefante","Gato","Leão","Macaco"]
-        this.animais = ["Cachorro","Elefante","Gato","Leão","Macaco","Peixe-palhaço","Tubarão","Estrela do mar","Polvo","Golfinho"]
+        this.animais = ["Cachorro","Elefante","Gato","Leão","Macaco","Peixe-palhaço","Tubarão","Estrela do mar","Polvo","Golfinho","Onça"]
         this.count = 0
         this.palavracount = 0
+        this.pulou = false
         this.inicia()
     }
     
@@ -30,10 +31,15 @@ class geral {
             } 
         }
         if (this.mat == 2) {
-            let i = Math.floor(Math.random(this.animais.length))
-            this.animais = this.shuffle(this.animais)
-            this.palavra = this.animais[i]
-            this.animais.splice(i,1)
+            let i = Math.floor(Math.random(this.animais.length -1))
+            this.animais2 = this.animais
+            if (!this.pulou) {
+                this.pulou = true
+                this.animais.pop()
+            }
+            this.animais2 = this.shuffle(this.animais2)
+            this.palavra = this.animais2[i]
+            this.animais2.splice(i,1)
         }
         document.getElementById("palavra").src = "../../img/"+this.palavra+".png"
         document.getElementById("palavra").alt = this.palavra

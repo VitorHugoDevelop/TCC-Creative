@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Entrar</title>
 </head>
 
@@ -33,6 +34,33 @@
             </div>
         </div>
     </div>
+    <script src="js/common.js"></script>
 </body>
+<?php
+echo "<script>
+    function popUp(mensagem, callback, estado) {
+    if (estado) op = `combalao`
+    else op = `triste`
+    document.body.innerHTML +=  `<div class='modal-prim' onclick='this.remove()' id='modal-prim'>`+
+                                `<div class='modal'>` +
+                                    `<img src='img/professor`+op+`.png' style='all: unset;'>` +
+                                    `<div class='centered' id='mensagem'></div>` +
+                                `</div>` +
+                                `</div>`
+    document.getElementById(`mensagem`).innerHTML = mensagem
+    if (callback) document.getElementsByClassName(`modal-prim`)[0].onclick = ``
+    setTimeout(() => {
+        document.getElementsByClassName(`modal-prim`)[0].remove()
+        callback();
+    }, 3000)
+}</script>";
 
+if ($_GET["incorreto"]) {
+        echo "
+        <script>
+        popUp('Nome ou senha<br>incorretos!')        
+        </script>
+        ";
+    };
+?>
 </html>

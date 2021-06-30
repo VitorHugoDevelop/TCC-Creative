@@ -13,7 +13,7 @@ if(!isset($_COOKIE['login']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/estilo_port.css">
+    <link rel="stylesheet" href="../../css/estilo_nat.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
     <title>CREATIVE</title>
 </head>
@@ -24,21 +24,15 @@ if(!isset($_COOKIE['login']))
             <header>Natureza</header>
             <h2>A qual grupo esse animal pertence?</h2>
             <div class="container ">
-                <div class="row justify-content-center  ">
+            <div class="row justify-content-center  ">
                     <div class="col-6">
-                        <img id="palavra" class="img-responsive " src="../../img/abelha.png" width="300px" height="200px">
+                        <img id="palavra" class="img-responsive " src="" width="300px" height="200px">
                     </div>
                 </div>
             </div>
             <div class="alternativas ">
                 <div class="op1">
                     <option onclick="jogo.clicar(this.innerHTML)" id="op1">Aquático</option>
-                </div>
-                <div class="op2 ">
-                    <option onclick="jogo.clicar(this.innerHTML)" id="op2"></option>
-                </div>
-                <div class="op3 ">
-                    <option onclick="jogo.clicar(this.innerHTML)" id="op3"></option>
                 </div>
                 <div class="op4 ">
                     <option onclick="jogo.clicar(this.innerHTML)" id="op4">Terrestre</option>

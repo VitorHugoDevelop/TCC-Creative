@@ -74,7 +74,7 @@ if(!isset($_COOKIE['login']))
                             <img data-valor=13 id=i12>
                         </div>
                         <div class="col-3">
-                            <img data-valor=14 id=i23>
+                            <img data-valor=14 id=i13>
                         </div>
                         <div class="col-3">
                             <img data-valor=15 id=i14>
