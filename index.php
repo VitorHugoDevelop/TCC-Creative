@@ -1,12 +1,13 @@
 <?php
-session_start();
-if(!isset($_COOKIE['login']))
-{
-    header("location:login.php");
-    exit;
-}
-include("BancoDeDados/crrgProg.php")
-?>
+// Verifica se o usuário está logado e carrega o progresso, caso não esteja, retorna à pagina de login
+    session_start();
+    if(!isset($_COOKIE['login']))
+    {
+        header("location:login.php");
+        exit;
+    }
+    include("BancoDeDados/crrgProg.php")
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

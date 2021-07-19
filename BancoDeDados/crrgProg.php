@@ -1,4 +1,8 @@
 <?php
+
+    // Recupera o progresso do usuário salvo no banco de dados
+    // Recebe o nome de usuário
+
     include("conexao.php");
     $login = $_COOKIE['login'];
     $sql = "SELECT nome FROM usuarios WHERE nome = '$login'";
@@ -6,6 +10,8 @@
     $query = mysqli_query($conn,"SELECT * FROM usuarios WHERE nome = '$login'") or die("erro ao selecionar");
     $res = $query->fetch_assoc();
     $fore = json_decode($res["progresso"]);
+
+    // Carrega o progresso através de cookies
     if(isset($fore->MatProgFac)) {
         setcookie("MatProgFac", "true", time()+31556926 ,'/');
     } else {setcookie("MatProgFac", "", time()+31556926 ,'/');}

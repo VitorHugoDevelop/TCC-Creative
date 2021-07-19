@@ -1,3 +1,6 @@
+//SOURCE - https://github.com/LeonardoVita/javascript-snake-game
+//obrigado LeonardoVita você é um herói
+
 window.onload = function(){
     const sprites = new Image();
     sprites.src = "../../img/snake-graphics.png";

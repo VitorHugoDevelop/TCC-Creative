@@ -1,4 +1,5 @@
 <?php
+    // Desfaz qualquer login anterior ao acessar essa página
     setcookie('login', null, -1, "/");
 ?>
 
@@ -37,6 +38,8 @@
     <script src="js/common.js"></script>
 </body>
 <?php
+
+// Define a função de popup através de um echo para evitar erros
 echo "<script>
     function popUp(mensagem, callback, estado) {
     if (estado) op = `combalao`
@@ -55,6 +58,7 @@ echo "<script>
     }, 3000)
 }</script>";
 
+// Se os dados estiverem incorretos avisa através de um popup
 if ($_GET["incorreto"]) {
         echo "
         <script>

@@ -1,6 +1,7 @@
 <?php
+    // Desfaz qualquer login anterior ao acessar essa página
     setcookie('login', null, -1, "/");
-
+    // Corrige problemas com erros relacionados a falta de parâmetros
     error_reporting (E_ALL ^ E_NOTICE);
 ?>
 <!DOCTYPE html>

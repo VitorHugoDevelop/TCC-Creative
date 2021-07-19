@@ -1,4 +1,7 @@
 <?php
+
+// Verifica se o usuário está logado para evitar erros
+
 session_start();
 if(!isset($_COOKIE['login']))
 {
@@ -7,6 +10,12 @@ if(!isset($_COOKIE['login']))
 }
 ?>
 <?php
+
+    // Salva o progresso do usuário
+    // Lê os cookies relacionados ao progresso e envia para o banco de dados
+    // Isso garante que o progresso esteja sempre sincronizado
+    // Juntamente com o script que carrega o progresso
+
     $progresso = new \stdClass();
     $nome = $_COOKIE['login'];
     if(isset($_COOKIE["MatProgFac"])) {
@@ -24,6 +33,8 @@ if(!isset($_COOKIE['login']))
     $json = json_encode($progresso);
     include("conexao.php");
     
+    // Envia um JSON para o campo progresso do BD
+
     $sql = "UPDATE usuarios  SET progresso='$json' WHERE nome='$nome'";
 
     $db = mysqli_select_db($conn, 'creative');

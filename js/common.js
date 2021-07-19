@@ -32,12 +32,14 @@ function getCookie(name) {
     return null;
 }
 
+// Função que adiciona um elemento CSS na página
 function addcss(rule) {
     let div = $("<div />", {
       html: '&shy;<style>' + rule + '</style>'
     }).appendTo("body");    
   }
 
+// Chama um popup que pode ser personalizado com alguns parâmetros.
 function popUp(mensagem, callback, estado) {
     if (estado) op = "combalao"
     else op = "triste"

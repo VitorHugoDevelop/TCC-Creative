@@ -1,3 +1,7 @@
+//SOURCE - https://www.youtube.com/watch?v=n3Kx5Eg2Hlw
+//obrigado Marcos André Silveira Kutova você é um herói
+
+
 let imagens = ["Cachorro","Elefante","Gato","Leão","Macaco","Peixe-palhaço","Tubarão","Golfinho"]
 let fundo = "../../img/memoria.png"
 

@@ -1,11 +1,21 @@
+
+// Script para as atividades de geografia e natureza
+
+//Classe principal
 class geral {
+
+    // Método que inicializa a classe
     constructor() {
+        // Verifica a dificuldade atual através do endereço da página
         if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "geral_geo.php") {
             this.mat = 1
         } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "geral_nat.php") {
             this.mat = 2
         }
-        document.getElementById("progress").value = 0
+        document.getElementById("progress").value = 0 // Inicia a barra de progresso
+
+
+        // Definição de valores que serão utilizados
         this.geo = ["Verão","Inverno","Primavera","Outono","Ensolarado","Chuvoso","Tarde","Dia","Noite","Manhã","Entardecer"]
         this.aquaticos = ["Peixe-palhaço","Tubarão","Estrela do mar","Polvo","Golfinho"]
         this.terrestres = ["Cachorro","Elefante","Gato","Leão","Macaco"]
@@ -13,10 +23,17 @@ class geral {
         this.count = 0
         this.palavracount = 0
         this.pulou = false
-        this.inicia()
+
+        this.inicia() // Inicia o jogo
     }
     
+
+    // Método que inicia o jogo
     inicia() {
+
+        // Realiza diferentes operações baseado no parâmetro da matéria
+
+        // Geografia
         if (this.mat == 1) {
             if (this.count + 3 >= this.geo.length) this.count = 0
             this.palavra = this.geo[this.palavracount]
@@ -30,6 +47,8 @@ class geral {
                 document.getElementById("op"+id[i]).innerHTML = this.geo2[i]
             } 
         }
+
+        // Natureza
         if (this.mat == 2) {
             let i = Math.floor(Math.random(this.animais.length -1))
             this.animais2 = this.animais
@@ -45,6 +64,9 @@ class geral {
         document.getElementById("palavra").alt = this.palavra
     }
 
+
+    // Função responsável por interagir com o click
+    // Realiza diferentes operações baseado no parâmetro da matéria     
     clicar(palavra) {
         if (this.mat == 1) {
             if(palavra == this.palavra) {
@@ -53,7 +75,7 @@ class geral {
                 this.palavracount++
                 this.inicia()
             } else {
-                if (this.palavra == "Verão" ||this.palavra == "Primavera" ||this.palavra == "Inverno" ||this.palavra == "Outono") {
+               if (this.palavra == "Verão" ||this.palavra == "Primavera" ||this.palavra == "Inverno" ||this.palavra == "Outono") {
                     popUp("Pense bem,<br>qual estação aparece na imagem?")
                 } else if (this.palavra == "Chuvoso" ||this.palavra == "Ensolarado" ) {
                     popUp("Um dia chuvoso<br>é quando<br>está chovendo!")
@@ -83,6 +105,8 @@ class geral {
         }
     }
 
+
+    //Função para verificar se o animal é aquático
     verificaAq() {
         for (let i in this.aquaticos) {
             if (this.palavra == this.aquaticos[i]) {
@@ -91,6 +115,8 @@ class geral {
         }
         return false
     }
+    
+    //Função para verificar se o animal é terrestre
     verificaTerr() {
         for (let i in this.terrestres) {
             if (this.palavra == this.terrestres[i]) {
@@ -100,6 +126,8 @@ class geral {
         return false
     }
     
+
+    // Método responsável pela progressão
     progredir() {
         if (Number(document.getElementById("progress").style.width.replace("%", "")) < 90) {
             let progVal = Number(document.getElementById("progress").style.width.replace("%", ""))
@@ -113,6 +141,7 @@ class geral {
         }
     }
 
+    // Método que embaralha os números para gerar as opções
     shuffle(array) {
         let ctr = array.length,
         temp, index
@@ -127,6 +156,7 @@ class geral {
     }
 }
 
+// Após o documento ser carregado inicia o jogo
 $(document).ready(
     () => {
         jogo = new geral()

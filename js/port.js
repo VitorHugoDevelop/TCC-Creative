@@ -1,5 +1,10 @@
+
+// Classe principal
 class port {
+
+    // Método que inicializa a classe
     constructor(){
+        // Verifica a dificuldade atual através do endereço da página
         if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "port_facil.php") {
             this.diff = 3
         } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "port_medio.php") {
@@ -7,7 +12,9 @@ class port {
         } else if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "port_dificil.php") {
             this.diff = 2
         }
-        document.getElementById("progress").style.width = "0%"
+        document.getElementById("progress").style.width = "0%" // Inicia a barra de progresso
+
+        // Definição de valores que serão utilizados
         this.palavras = ["Maçã", "Banana", "Carro", "Abacaxi", "Abacate", "Nuvem", "Pêssego", "Foguete", "Bicicleta", "Melancia",
                         "Vaca", "Gato", "Celular", "Telefone", "Cavalo", "Xícara", "Caju", "Fogo", "Kiwi", "Cereja",
                         "Avião", "Carro", "Morango", "Cachorro", "Pássaro", "Uva", "Televisão", "Sol", "Lua", "Flor"]
@@ -19,11 +26,17 @@ class port {
         this.count = 0
         this.sils = []
         this.dica = false
-        this.inicia()
+
+        this.inicia()// Inicia a execução do jogo
     }
 
+    // Método que inicia o jogo
     inicia(){
+        
+        // As dificuldades estão fora de ordem pois foram mudadas no meio do caminho
+        // Médio
         if(this.diff==1) {  
+            // Separa a priemira letra
             this.palavra = this.facil[this.count]
             this.posicLetra = parseInt(this.alphabetPosition(this.palavra.charAt(0)))
             this.shuffle(this.letras = [this.palavra.charAt(0), this.alfabeto[this.posicLetra+1],this.alfabeto[this.posicLetra+2],this.alfabeto[this.posicLetra+3],])
@@ -32,7 +45,11 @@ class port {
                 var op = this.letras
                 document.getElementById(id).innerHTML = op[i]
             }
+
+        // Difícil
         } else if (this.diff==2) {
+
+            //Separa as sílabas e evita repetições
             this.silabas2 = this.silabas
             this.palavra = this.medio[this.count]
             this.sils = []
@@ -63,8 +80,12 @@ class port {
             for (let i in this.shuffle([0, 1, 2, 3])) {
                 let id = "op" + (Number(i) + 1)
                 document.getElementById(id).innerHTML = this.sils[i]
-            }                  
+            }        
+            
+        // Fácil
         } else if (this.diff == 3) {
+
+            // Mais simples, utiliza a palavra inteira
             this.palavra = this.dificil[this.count]
             this.palavras2 = []
             this.palavras2.push(this.palavras[this.count])
@@ -75,14 +96,15 @@ class port {
             for (let i in [0, 1, 2, 3]) {
                 let id = "op" + (Number(i) + 1)
                 document.getElementById(id).innerHTML = this.palavras2[i]
-            } 
-                
+            }     
         }
         
+        // Apresenta a imagem
         document.getElementById("palavra").src = "../../img/"+this.palavra+".png"
         document.getElementById("palavra").alt = this.palavra
     }
 
+    // Método que embaralha os números para gerar as opções 
     shuffle(array) {
         let ctr = array.length,
         temp, index
@@ -96,6 +118,8 @@ class port {
         return array
     }
 
+    // Função responsável por interagir com o click
+    // Realiza diferentes operações baseado no parâmetro da dificuldade
     clicar(palavra){
         switch(this.diff) {
             case 3:
@@ -138,6 +162,7 @@ class port {
         }
     }
 
+    // Método que retorna a posição alfabética da letra
     alphabetPosition(text) {
         var result = "";
         for (var i = 0; i < text.length; i++) {
@@ -148,6 +173,7 @@ class port {
         return result.slice(0, result.length - 1);
       }
 
+    // Método responsável pela progressão
     progredir() {
 
         // Checa se o usuário já atingiu o objetivo
@@ -188,6 +214,8 @@ class port {
     }
 
 }
+
+// Após o documento ser carregado inicia o jogo
 $(document).ready(
     () => {
         jogo = new port()

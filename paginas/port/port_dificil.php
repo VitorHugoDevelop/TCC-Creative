@@ -1,4 +1,5 @@
 <?php
+// Verifica se o usuário está logado, caso não retorna à pagina de login
 session_start();
 if(!isset($_COOKIE['login']))
 {

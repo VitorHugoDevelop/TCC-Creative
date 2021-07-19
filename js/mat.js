@@ -1,5 +1,3 @@
-// Script do jogo de matemática
-
 
 // Classe principal
 class mat {
@@ -86,7 +84,7 @@ class mat {
             this.progredir()
             this.inicia()
         } 
-        // Caso esteja errado, mostra um alerta
+        // Caso esteja errado, mostra um popup
         else {
             switch(this.diff) {
                 case 1:
